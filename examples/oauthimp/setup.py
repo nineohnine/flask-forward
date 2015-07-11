@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name = "Flask-Forward",
+    name = "Flask-Forward-OAuth",
     version = "0.0.1",
     packages = find_packages(),
     # requirements
@@ -9,7 +9,7 @@ setup(
         'Flask-Forward'
     ],
     dependency_links=[
-        "git+ssh://git@github.com/mwilliamson/mayo.git@0.2.1#egg=Flask-Forward"
+        "git+ssh://git@github.com:nineohnine/flask-forward.git@master#egg=Flask-Forward"
     ],
     # metadata for upload to PyPI
     author = "Brent Rotz",
