@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+#intellij
+.idea/*
+
 # C extensions
 *.so
 
