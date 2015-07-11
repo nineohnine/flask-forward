@@ -1,8 +1,6 @@
 from flask import Flask, jsonify
 from flask_forward import FlaskForward
 
-print(dir(FlaskForward))
-
 
 class MockDbObj(object):
 
@@ -133,6 +131,14 @@ class ClientService(ResService):
 
 app = Flask(__name__)
 
+FlaskForward(
+    app=app,
+    usr_cls=UserService,
+    tk_cls=TokenService,
+    cl_cls=ClientService
+)
+
+print(dir(app))
 
 @app.route("/clients", methods=['POST'])
 def register_client():
@@ -140,7 +146,7 @@ def register_client():
 
 
 @app.route("/tokens", methods=['POST'])
-@auth_api.auth_required(client_auth=True, token_auth=False)
+#@auth_api.auth_required(client_auth=True, token_auth=False)
 def issue_token():
     return 'hello world'
 
@@ -151,7 +157,7 @@ def hello():
 
 
 @app.route("/users")
-@auth_api.auth_required(client_auth=True, token_auth=True, scope=['users'])
+#@auth_api.auth_required(client_auth=True, token_auth=True, scope=['users'])
 def get_users():
     return jsonify([
         {

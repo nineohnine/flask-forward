@@ -298,20 +298,17 @@ class ValidatorService(ReqVal):
 
 class AuthInterface(object):
 
-    def __init__(self, *args, **kwargs):
-        pass
-
     def authorize_client(self, *args, **kwargs):
-        pass
+        raise NotImplementedError('Must be implemented by child')
 
     def authorize_token(self, *args, **kwargs):
-        pass
+        raise NotImplementedError('Must be implemented by child')
 
     def validate_auth_request(self, *args, **kwargs):
-        pass
+        raise NotImplementedError('Must be implemented by child')
 
     def validate_revoke_request(self, *args, **kwargs):
-        pass
+        raise NotImplementedError('Must be implemented by child')
 
 
 class OAuthService(AuthInterface):
@@ -498,5 +495,5 @@ class FlaskForward(object):
                 ctx.flask_forward = self.start()
             return ctx.flask_forward
 
-auth_api = LocalProxy(lambda: stack.top.auth_api)
+#auth_api = LocalProxy(lambda: stack.top.auth_api)
 
