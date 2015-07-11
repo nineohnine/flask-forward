@@ -1,2 +1,2 @@
 Flask==0.10
-git+https://github.com/nineohnine/flask-forward.git@v0.0.1#egg=FlaskForward-0.0.1
+git+https://github.com/nineohnine/flask-forward.git@master#egg=FlaskForward-0.0.1

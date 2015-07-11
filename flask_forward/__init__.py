@@ -498,5 +498,5 @@ class FlaskForward(object):
                 ctx.flask_forward = self.start()
             return ctx.flask_forward
 
-auth_api = LocalProxy(stack.top.auth_api)
+auth_api = LocalProxy(lambda: stack.top.auth_api)
 

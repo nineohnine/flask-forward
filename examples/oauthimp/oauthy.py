@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
-import flask_forward
+from flask_forward import FlaskForward
 
-print(dir(flask_forward))
+print(dir(FlaskForward))
 
 
 class MockDbObj(object):
