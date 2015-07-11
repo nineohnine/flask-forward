@@ -2,7 +2,7 @@ from oauthlib.oauth2 import MobileApplicationServer
 from oauthlib.oauth2 import RequestValidator as ReqVal
 from oauthlib.common import Request as OAuthlibRequest
 from werkzeug.local import LocalProxy
-from flask import Request, Response, current_app
+from flask import Request, Response
 from functools import wraps
 
 try:
@@ -498,5 +498,5 @@ class FlaskForward(object):
                 ctx.flask_forward = self.start()
             return ctx.flask_forward
 
-auth_api = LocalProxy(current_app.auth_api)
+auth_api = LocalProxy(stack.top.auth_api)
 

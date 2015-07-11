@@ -1,5 +1,7 @@
-from flask import flask, jsonify
-from flask_foward import auth_api
+from flask import Flask, jsonify
+import flask_forward
+
+print(dir(flask_forward))
 
 
 class MockDbObj(object):
