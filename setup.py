@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(
-    name = "Flask-Forward",
+    name = "FlaskForward",
     version = "0.0.1",
     packages = find_packages(),
     # requirements
